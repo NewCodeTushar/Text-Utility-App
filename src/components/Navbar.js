@@ -33,7 +33,7 @@ export default function Navbar(props) {
   )
 }
 // proptypes type declaration
-Navbar.propTypes ={Title:propTypes.string.isRequired,
+Navbar.propTypes ={title:propTypes.string.isRequired,
 About:propTypes.string};
 
 Navbar.defaultProps ={
