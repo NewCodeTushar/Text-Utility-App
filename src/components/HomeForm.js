@@ -23,6 +23,10 @@ export default function HomeForm(props) {
               <textarea className="form-control" value={text} onChange={handleOnchange} id="exampleFormControlTextarea1" row="1"></textarea>
           </div>
           <button className="btn btn-primary" onClick={handleUpClick}>Log-In</button>
+          <div className="container my-3">
+            <h1>Your text summary</h1>
+            <p>{text.split(" ").length} words and {text.length} characters</p>
+          </div>
     </div>
   )   
 }
