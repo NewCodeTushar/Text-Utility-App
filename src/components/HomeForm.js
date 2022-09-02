@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 
 export default function HomeForm(props) {
     const handleUpClick = () => {
-        console.log("Button was clicked");
+        // console.log("Button was clicked");
         let newText = text.toUpperCase();
         setText(newText);
     }
     const handleOnchange = (event)=>{
-        console.log("on change");
+        // console.log("on change");
         setText(event.target.value);
     }
     const [text,setText]= useState('Enter your text');
