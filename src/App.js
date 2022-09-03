@@ -1,53 +1,59 @@
 //import logo from './logo.svg';
 import './App.css';
-let name="Tushar";
+import React, { useState } from 'react'
+import Navbar from './components/Navbar';
+import HomeForm from './components/HomeForm';
+import Alert from './components/Alert';
+import About from './components/About';
+// import{
+//   BrowserRouter as Router,
+//   Route,
+//   Routes
+// } from "react-router-dom";
+
 function App() {
+  const [mode, setMode] = useState('light');
+  const [alert, setAlert] = useState(null);
+
+  const showAlert =(message, type)=>{
+    setAlert({
+      msg: message,
+      typ: type
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  }
+  
+  const [toggleName, setToggleName] = useState('Enable Dark Mode');
+  const toggleMode =() =>{
+    if(mode === 'light'){
+      setMode('dark');
+      setToggleName("Enable Light Mode");
+      document.body.style.backgroundColor ='#042743';
+      showAlert("Dark mode has been enabled", "success")
+    }
+    else{
+      setMode('light');
+      setToggleName("Enable Dark Mode");
+      document.body.style.backgroundColor = 'white';
+      showAlert("Light mode has been enabled", "success")
+    }
+  }
   return (
     <>
-    {/* ------------------------Navbar Head------------------------ */}
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">Navbar</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/">Action</a></li>
-                  <li><a className="dropdown-item" href="/">Another action</a></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="/">Something else here</a></li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    {/* --------------------------Navbar Tail----------------- */}
-     <div classNameName="blank">
-        <h1>Hello {name}</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-         Veniam modi vel alias earum ipsa! Eos, eaque. Molestias officiis impedit exercitationem.
-         Pariatur repellat soluta fugit praesentium. Maiores, reiciendis asperiores vel soluta vero ea non magnam?</p>
-     </div>
+  {/* <Router> */}
+      <Navbar title="My App" about="About" mode={mode} toggleMode={toggleMode} lable={toggleName}/>
+      <Alert alert={alert}/>
+    {/* <Navbar /> */}
+    <div className="container">
+      {/* <Routes> */}
+            {/* <Route exact path="/about" element={<About/>}/>          */}
+            {/* <Route exact path="/" element={<HomeForm showAlert={showAlert} heading="Enter Your Text" mode={mode} label="Enter your Text" />}/>
+      </Routes> */}
+      <HomeForm showAlert={showAlert} heading="Enter Your Text" mode={mode} label="Enter your Text" />
+    </div>
+  {/* </Router> */}
     </>
   );
 }
