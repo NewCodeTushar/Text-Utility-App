@@ -45,7 +45,7 @@ export default function HomeForm(props) {
               <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
           </div> */}
           <div className="mb-3">
-              <textarea className="form-control" value={text} onChange={handleOnchange} placeholder="Enter your text" style={{ backgroundColor: props.mode === 'light' ? 'white' : 'grey', color: props.mode === 'dark' ? 'white' : '#042743' }} id="myBox" row="1"></textarea>
+        <textarea className="form-control" value={text} onChange={handleOnchange} placeholder="Enter your text" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#13466e', color: props.mode === 'dark' ? 'white' : '#042743' }} id="myBox" row="1"></textarea>
           </div>
           <button className="btn btn-primary mx-3 my-3" onClick={handleUpClick}>Upper Case</button>
           <button className="btn btn-primary mx-3 my 3" onClick={handleLoClick}>Lower Case</button>
@@ -54,8 +54,8 @@ export default function HomeForm(props) {
           <button className="btn btn-primary mx-3 my-3" onClick={handleExtraSpaces}>Remove Extra Space</button>
           <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
               <h1>Your text summary</h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
-            <p>{0.008 * text.split(" ").length} minutes read (Average Reading Speed)</p>
+            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+        <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} minutes read (Average Reading Speed)</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Enter something in the textbox above to preview it here"}</p>
           </div>
