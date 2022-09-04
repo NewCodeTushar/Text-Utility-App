@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react'
 import Navbar from './components/Navbar';
@@ -45,7 +44,6 @@ function App() {
   <Router>
       <Navbar title="Text-Utility" about="About" mode={mode} toggleMode={toggleMode} lable={toggleName}/>
       <Alert alert={alert}/>
-    {/* <Navbar /> */}
     <div className="container">
       <Routes>
             <Route exact path="/about" element={<About mode={mode}/>}/>         

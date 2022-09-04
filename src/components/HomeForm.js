@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, {useState} from 'react'
 
 export default function HomeForm(props) {
     const handleUpClick = () => {
@@ -41,10 +41,6 @@ export default function HomeForm(props) {
   return (
       <div className='container' style={{ color: props.mode === 'dark' ? 'white' : '#042743'}}>
         <h1 className='my-2'>{props.heading}</h1>
-          {/* <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-              <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-          </div> */}
           <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnchange} placeholder="Enter your text" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#13466e', color: props.mode === 'dark' ? 'white' : '#042743' }} id="myBox" row="5"></textarea>
           </div>
