@@ -4,6 +4,7 @@
 ---
 ##Installation
 ---
+-Copy url to gitbash, VSCode Powershell,etc
 ```
 git clone {url}
 ```
