@@ -1,19 +1,15 @@
 ---
-#**Text - Utitilty App 1st github app**
+#**Text - Utitilty App**
 ---
-
 ---
-##Installatiom
+##Installation
 ---
-
 ```
 git clone {url}
 ```
-
 ---
 ##Usage
 ---
-
 You can do following with this app :-
 
 -Capitalize all Characters.
@@ -27,11 +23,13 @@ You can do following with this app :-
 ---
 ##Features include :-
 ---
-
 -Dark mode & light mode (currently).
 
 -Word and character counter.
 
 -Preview for written text.
 
-_It is a TextManipulating App_
+---
+##About
+---
+_It is a TextManipulating App and an app created while learning how to use_ `create-react-app` _with some potential future updates._
