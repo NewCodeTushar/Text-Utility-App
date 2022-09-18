@@ -1,4 +1,18 @@
-# Text - Utitilty App 1st github app
+---
+#**Text - Utitilty App 1st github app**
+---
+
+---
+##Installatiom
+---
+
+```
+git clone {url}
+```
+
+---
+##Usage
+---
 
 You can do following with this app :-
 
@@ -10,8 +24,9 @@ You can do following with this app :-
 
 -copy text from field to clipboard
 
-
-Features include :-
+---
+##Features include :-
+---
 
 -Dark mode & light mode (currently).
 
@@ -19,4 +34,4 @@ Features include :-
 
 -Preview for written text.
 
-It is a Demo App with future upgrades in time
+_It is a TextManipulating App_
